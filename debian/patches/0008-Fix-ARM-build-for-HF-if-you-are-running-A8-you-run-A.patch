@@ -1,0 +1,25 @@
+From 9da5fb105a036399dce14a112ed916f8f03dde73 Mon Sep 17 00:00:00 2001
+From: Joe Burmeister <joe@SuaveAirApps.co.uk>
+Date: Thu, 16 Oct 2014 13:54:22 +0100
+Subject: [PATCH] Fix ARM build for HF, if you are running A8+, you run ARM-HF.
+
+---
+ Platform/Linux/Build/Common/Platform.Arm | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Platform/Linux/Build/Common/Platform.Arm b/Platform/Linux/Build/Common/Platform.Arm
+index 32cc34d..ecc5540 100644
+--- a/Platform/Linux/Build/Common/Platform.Arm
++++ b/Platform/Linux/Build/Common/Platform.Arm
+@@ -1,7 +1,7 @@
+ ifeq "$(CFG)" "Release"
+ 
+     # Hardware specifying flags
+-    CFLAGS += -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp #-mcpu=cortex-a8
++    CFLAGS += -march=armv7-a -mtune=cortex-a8 -mfpu=neon #-mcpu=cortex-a8
+ 
+     # Optimization level, minus currently buggy optimizing methods (which break bit-exact)
+     CFLAGS += -O3 -fno-tree-pre -fno-strict-aliasing
+-- 
+1.9.1
+
