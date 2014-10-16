@@ -5,10 +5,22 @@ set -e
 MODULE_DIR="/usr/lib/"
 MODULES="libXnDeviceSensorV2KM.so.0 libXnDeviceFile.so.0"
 
-if [ "$1" = "configure" ]; then
-	for module in $MODULES; do
-		niReg -r $MODULE_DIR/$module /etc/openni
-	done
-fi
+case "$1" in
+    configure)
+        for module in $MODULES; do
+          niReg -r $MODULE_DIR/$module /etc/openni
+        done
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
 
 #DEBHELPER#
+
+exit 0
