@@ -6,3 +6,4 @@
 0006-Add-SONAME-to-libraries.patch
 0007-Use-system-wide-libjpeg.patch
 0008-Fix-ARM-build-for-HF-if-you-are-running-A8-you-run-A.patch
+0009-Change-UsbInterface-as-on-ARM-and-on-PC-you-want-it-.patch

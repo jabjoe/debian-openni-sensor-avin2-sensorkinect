@@ -1,0 +1,25 @@
+From 3dc18bb1449d0d028960e532098c9635da333ec3 Mon Sep 17 00:00:00 2001
+From: Joe Burmeister <joe@SuaveAirApps.co.uk>
+Date: Thu, 16 Oct 2014 14:13:59 +0100
+Subject: [PATCH] Change UsbInterface as on ARM and on PC you want it set to 1.
+
+---
+ Data/GlobalDefaultsKinect.ini | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Data/GlobalDefaultsKinect.ini b/Data/GlobalDefaultsKinect.ini
+index eee0d2c..4e70875 100644
+--- a/Data/GlobalDefaultsKinect.ini
++++ b/Data/GlobalDefaultsKinect.ini
+@@ -60,7 +60,7 @@ LogWriteToFile=1
+ ;APCEnabled=1
+ 
+ ; USB interface to be used. 0 - FW Default, 1 - ISO endpoints, 2 - BULK endpoints. Default: Arm - 2, other platforms - 1
+-;UsbInterface=2
++UsbInterface=1
+ 
+ [Depth]
+ ; Output format. 0 - Shift values, 1 - depth values (default)
+-- 
+1.9.1
+
